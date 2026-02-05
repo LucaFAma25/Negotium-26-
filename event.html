@@ -776,7 +776,8 @@ h2.title{
  </div>
 </div>
 <!-- ================= channel surfing================= -->
-  <div class="event-card " onclick="openRules('7 Channel Surfing RR.png','https://docs.google.com/forms/d/e/1FAIpQLSetJG3JojIBsRHTm8KrgOHsKK3ppkPHvbdzaPWDNHQoOebbNw/viewform?usp=dialog')">
+
+<div class="event-card " onclick="openRules('7 Channel Surfing RR.png','https://docs.google.com/forms/d/e/1FAIpQLSetJG3JojIBsRHTm8KrgOHsKK3ppkPHvbdzaPWDNHQoOebbNw/viewform?usp=dialog')">
  <div class="event-image-container">
   <img src="8 Channel Surfing cover.png" class="event-image">
  </div>
@@ -953,15 +954,9 @@ h2.title{
  <div class="modal-content">
   <span class="close" onclick="closeModal()">&times;</span>
   <img id="rulesImage">
-  <div id="paymentSection" style="display:none;">
-    <img src="qr.jpg" style="width:75%;border-radius:10px;">
-    <p style="font-size:14px;color:#ccc;margin-top:10px;">💳 Scan QR & Pay<br>📌 Take Screenshot<br>🧾 Upload in Google Form</p>
-  </div>
-
-  <div style="margin-top:10px;">
-     <button id="nextBtn" class="btn" onclick="showPayment()">Next</button>
-     <button id="backBtn" class="btn" onclick="showRules()" style="display:none;background:#444;">Back</button>
-     <a id="registerBtn" class="btn" target="_blank" style="display:none;">Register</a>
+  
+     <a id="registerBtn" class="btn" target="_blank">Register</a>
+     
   </div>
   
 
@@ -983,26 +978,13 @@ window.addEventListener('scroll',()=>{
   });
 });
 
-function openRules(img,link){
- document.getElementById('rulesImage').src=img;
- document.getElementById('registerBtn').href=link;
- showRules();
- document.getElementById('rulesModal').style.display="flex";
+function openRules(img, link){
+  document.getElementById('rulesImage').src = img;
+  document.getElementById('registerBtn').href = link;
+  document.getElementById('rulesModal').style.display = "flex";
 }
-function showPayment(){
- document.getElementById("rulesImage").style.display="none";
- document.getElementById("paymentSection").style.display="block";
- document.getElementById("nextBtn").style.display="none";
- document.getElementById("backBtn").style.display="inline-block";
- document.getElementById("registerBtn").style.display="inline-block";
-}
-function showRules(){
- document.getElementById("rulesImage").style.display="block";
- document.getElementById("paymentSection").style.display="none";
- document.getElementById("nextBtn").style.display="inline-block";
- document.getElementById("backBtn").style.display="none";
- document.getElementById("registerBtn").style.display="none";
-}
+
+
 function closeModal(){document.getElementById('rulesModal').style.display="none";}
 window.onclick=e=>{if(e.target==document.getElementById('rulesModal')) closeModal();}
 document.addEventListener('keydown',e=>{if(e.key==="Escape") closeModal();});
